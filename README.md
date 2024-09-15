@@ -11,10 +11,10 @@
     <a href="https://opensource.org/licenses/MIT">
         <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-green?color=5271FF">
     </a>
-    <a href="https://github.com/astral-sh/rye">
+    <a href="https://github.com/astral-sh/uv">
         <img alt="uv" src="https://img.shields.io/badge/package%20manager-uv-blue?color=5271FF">
     </a>
-    <a href="https://github.com/PyCQA/flake8">
+    <a href="https://github.com/astral-sh/ruff">
         <img alt="ruff" src="https://img.shields.io/badge/code%20style-ruff-000000.svg?color=5271FF">
     </a>
     <a href="https://github.com/python/mypy">
