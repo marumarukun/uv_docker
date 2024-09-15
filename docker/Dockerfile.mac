@@ -1,0 +1,21 @@
+FROM ubuntu:22.04
+
+ENV TZ=Asia/Tokyo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update && \
+    apt-get install -y curl git gcc python3-dev &&\
+    apt-get upgrade -y && \
+    apt-get clean
+
+WORKDIR /workspace
+
+# pathを設定
+ENV PATH="/root/.cargo/bin/:${PATH}"
+
+# uvをインストール
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# 必要なファイルをコピーしてrye syncを実行
+COPY .python-version pyproject.toml uv.lock README.md ./
+RUN uv sync
