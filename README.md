@@ -48,10 +48,10 @@
 
 ### dockerコンテナ ビルド & 起動
 
-CPU環境用
+mac環境用
 
 ```bash
-docker compose up -d --build cpu
+docker compose up -d --build mac
 ```
 
 GPU環境用
