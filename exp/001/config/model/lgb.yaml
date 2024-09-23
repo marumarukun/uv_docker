@@ -1,8 +1,8 @@
 params:
-  objective: "regression"
-  metric: "rmse"
+  objective: regression
+  metric: rmse
   verbosity: -1
-  boosting_type: "gbdt"
+  boosting_type: gbdt
   learning_rate: 0.01
   num_leaves: 31
   min_child_samples: 20
@@ -14,6 +14,6 @@ params:
   reg_alpha: 0.1
   reg_lambda: 0.1
 
-early_stopping_rounds: 500
+early_stopping_rounds: 100
 log_evaluation_period: 100
 num_boost_round: 100000
