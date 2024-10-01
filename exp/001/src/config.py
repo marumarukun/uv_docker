@@ -2,6 +2,7 @@ import os
 import sys
 
 from hydra import compose, initialize_config_dir
+from hydra.core.global_hydra import GlobalHydra
 
 
 class Config:
@@ -10,7 +11,7 @@ class Config:
     """
 
     @staticmethod
-    def get_cfg():
+    def get_cfg(overrides: list[str] | None = None):
         """
         設定値の辞書を取得
         @return
@@ -29,8 +30,11 @@ class Config:
             print(f"Can not find directory: {conf_dir}.")
             sys.exit(-1)
 
+        # GlobalHydraを初期化
+        GlobalHydra.instance().clear()
+
         with initialize_config_dir(version_base=None, config_dir=conf_dir):
-            cfg = compose(config_name="config")
+            cfg = compose(config_name="config", overrides=overrides)
             return cfg
 
 
