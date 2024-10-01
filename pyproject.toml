@@ -15,6 +15,7 @@ dependencies = [
     "pyarrow>=17.0.0",
     "seaborn>=0.13.2",
     "matplotlib>=3.9.2",
+    "omegaconf>=2.3.0",
     # torchを使う際は、以下のコメントアウトを解除
     "torch==2.4.0+cu121; sys_platform == 'linux' and platform_machine == 'x86_64'",
     "torch==2.4.0; sys_platform == 'darwin' or (sys_platform == 'linux' and platform_machine == 'aarch64')",
