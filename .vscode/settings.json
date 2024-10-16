@@ -4,12 +4,12 @@
 	"workbench.preferredDarkColorTheme": "Monokai Dimmed", // ダークテーマをMonokai Dimmedに設定
 	"workbench.preferredLightColorTheme": "Default Light Modern", // ライトテーマをDefault Light Modernに設定
 	"workbench.editor.enablePreview": false, // エディタのプレビューを無効にする
-
+	"workbench.tree.indent": 20, // ツリーのインデントを20に設定
+	"window.commandCenter": false, // コマンドセンターを無効にする
 	// Power Mode settings
 	"powermode.combo.location": "off", // Power Modeのコンボ位置をオフに設定
 	"powermode.enabled": true, // Power Modeを有効にする
 	"powermode.shake.enabled": false, // Power Modeのシェイク効果を無効にする
-
 	// Editor settings
 	"editor.minimap.enabled": false, // エディタのミニマップを無効にする
 	"editor.rulers": [
@@ -18,7 +18,8 @@
 	"editor.formatOnType": true, // タイプ時にフォーマットを実行
 	"editor.formatOnSave": true, // 保存時にフォーマットを実行
 	"editor.formatOnPaste": true, // ペースト時にフォーマットを実行
-
+	"editor.cursorBlinking": "phase", // カーソルの点滅を有効にする
+	"editor.cursorSmoothCaretAnimation": "explicit", // カーソルのアニメーションを有効にする
 	// Notebook settings
 	"notebook.output.scrolling": true, // ノートブックの出力をスクロール可能にする
 	"notebook.insertFinalNewline": true, // ノートブックの最後に改行を挿入する
@@ -28,11 +29,9 @@
 		"notebook.source.fixAll": true,
 		"notebook.source.organizeImports": true
 	},
-
 	// Explorer settings
 	"explorer.confirmDelete": false, // ファイル削除の確認を無効にする
 	"explorer.confirmDragAndDrop": false, // ドラッグ＆ドロップの確認を無効にする
-
 	// Files settings
 	"files.insertFinalNewline": true, // ファイルの最後に改行を挿入する
 	"files.autoSave": "afterDelay", // ファイルを遅延後に自動保存する
@@ -43,7 +42,6 @@
 		".ruff_cache": true, // .ruff_cacheを除外
 		".venv": true, // .venvを除外
 	},
-
 	// Python settings
 	"[python]": {
 		"editor.defaultFormatter": "charliermarsh.ruff", // Pythonのデフォルトフォーマッタをcharliermarsh.ruffに設定
@@ -53,7 +51,6 @@
 			"source.fixAll": "explicit" // 保存時にエラーを修正
 		}
 	},
-	
 	// Window settings
-	"window.autoDetectColorScheme": true // カラースキームを自動検出する
+	"window.autoDetectColorScheme": true, // カラースキームを自動検出する
 }
