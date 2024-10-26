@@ -16,7 +16,6 @@ dependencies = [
     "seaborn>=0.13.2",
     "matplotlib>=3.9.2",
     "omegaconf>=2.3.0",
-    # torchを使う際は、以下のコメントアウトを解除
     "torch==2.4.0+cu121; sys_platform == 'linux' and platform_machine == 'x86_64'",
     "torch==2.4.0; sys_platform == 'darwin' or (sys_platform == 'linux' and platform_machine == 'aarch64')",
     "torchvision==0.19.0+cu121; sys_platform == 'linux' and platform_machine == 'x86_64'",
@@ -39,10 +38,26 @@ dev-dependencies = [
     "ruff>=0.6.5",
     "mypy>=1.11.2",
 ]
-find-links = [
-    "https://download.pytorch.org/whl/cu121/torch",
-    "https://download.pytorch.org/whl/cu121/torchvision",
+
+[tool.uv.sources]
+torch = [
+    { index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"},
+    { index = "torch-cpu", marker = "sys_platform == 'darwin' or ( sys_platform == 'linux' and platform_machine == 'aarch64')"},
 ]
+torchvision = [
+    { index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"},
+    { index = "torch-cpu", marker = "sys_platform == 'darwin' or ( sys_platform == 'linux' and platform_machine == 'aarch64')"},
+]
+
+[[tool.uv.index]]
+name = "torch-cuda"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[[tool.uv.index]]
+name = "torch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
 
 [tool.ruff]
 exclude = [".git", ".mypy_cache", ".ruff_cache", ".venv", "third_party"]
